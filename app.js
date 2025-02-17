@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 app.get('/visit', async (req, res) => {
   const targetUrl = 'https://gleaming-maamoul-87fc14.netlify.app/.netlify/functions/api/'; // Replace with the desired URL
   const scraperUrl = `http://api.scraperapi.com?api_key=${SCRAPER_API_KEY}&url=${encodeURIComponent(targetUrl)}`;
-  const requests = Array.from({ length: 5}, () => axios.get(scraperUrl));
+  const requests = Array.from({ length: 4}, () => axios.get(scraperUrl));
   
   try {
     await Promise.all(requests);

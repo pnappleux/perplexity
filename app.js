@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/visit', async (req, res) => {
-  const targetUrl = 'https://example.com'; // Replace with the desired URL
+  const targetUrl = 'https://google.com'; // Replace with the desired URL
   const requests = Array.from({ length: 100 }, () => axios.get(targetUrl));
   
   try {

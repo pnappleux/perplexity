@@ -11,11 +11,11 @@ app.get('/', (req, res) => {
 app.get('/visit', async (req, res) => {
   const targetUrl = 'https://gleaming-maamoul-87fc14.netlify.app/.netlify/functions/api/'; // Replace with the desired URL
   const scraperUrl = `http://api.scraperapi.com?api_key=${SCRAPER_API_KEY}&url=${encodeURIComponent(targetUrl)}`;
-  const requests = Array.from({ length: 4}, () => axios.get(scraperUrl));
+  const requests = Array.from({ length: 3}, () => axios.get(scraperUrl));
   
   try {
     await Promise.all(requests);
-    res.json({ message: 'Visited site 100 times in parallel using ScraperAPI' });
+    res.json({ message: 'Visited site 3 times in parallel using ScraperAPI' });
   } catch (error) {
     res.status(500).json({ error: 'Error visiting site', details: error.message });
   }
